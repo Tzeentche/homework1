@@ -15,8 +15,8 @@ public class LastNumber {
         try {
 
             System.out.println("Please, enter your number: ");
-            number = input.nextInt();
-            input.close();
+
+                number = input.nextInt();
 
             boofer = (number % 10);
 
@@ -26,6 +26,8 @@ public class LastNumber {
             } else {
 
                 System.out.println("Your number's last numeral is not 7...");
+
+                input.close();
             }
 
         } catch (InputMismatchException e) {
