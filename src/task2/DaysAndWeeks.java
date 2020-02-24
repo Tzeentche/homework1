@@ -1,5 +1,7 @@
 package task2;
 
+//      Продолжите приведенный пример, добавьте расчет и вывод суток и недель.
+
 public class DaysAndWeeks {
 
     public static void main(String[] args) {
