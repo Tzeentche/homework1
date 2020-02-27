@@ -26,12 +26,17 @@ public class DayMonthYear {
 
             System.out.println("You did something wrong. Try again!");
         }
+
+        System.out.println("Next day date is " + userInput(days));
     }
 
-    static int userInput(int[] date) {
+    static String userInput(int[] date) {
 
+        String tomorrow = "";
 
-
-        return 0;
+        for (int i = 0; i < date.length; i++) {
+            tomorrow += Integer.toString(date[i]) + ":";
+        }
+        return tomorrow;
     }
 }
