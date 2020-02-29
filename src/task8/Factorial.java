@@ -12,9 +12,9 @@ public class Factorial {
         System.out.println(result.counter());
     }
 
-    int usersInput() {
+    long usersInput() {
 
-        int fact = 0;
+        long fact = 0;
         Scanner scn = new Scanner(System.in);
 
         try {
@@ -34,7 +34,7 @@ public class Factorial {
     int counter() {
 
         int factorial = 1;
-        int value = usersInput();
+        long value = usersInput();
 
         for (int i = 1; i <= value; i++) {
 
