@@ -3,8 +3,6 @@ package task12;
 //      Имеется целое число, следует вывести его в бухгалтерском формате. Т.е. начиная справа каждые три позиции отделяются пробелом.
 //      Например, число 20023143 должно быть выведено как 20 023 143.
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.*;
 
 public class AccountingFormat {
@@ -12,7 +10,7 @@ public class AccountingFormat {
     public static void main(String[] args) {
 
         AccountingFormat accFor = new AccountingFormat();
-        accFor.reformer();
+        System.out.println(accFor.reformer());
     }
 
     int usersInput() {
@@ -26,24 +24,31 @@ public class AccountingFormat {
             scn.close();
 
         } catch(InputMismatchException ex) {
-
             System.out.println("Please, next time enter integer value.");
         }
         return accValue;
     }
 
-    int reformer() {
+    StringBuffer reformer() {
 
-        StringBuffer verifiable = new StringBuffer(usersInput());
-        verifiable.reverse();
-        String verifyingString  = verifiable.toString();
+        StringBuffer verifiable = new StringBuffer();
+
+        StringBuffer boofer = new StringBuffer();
+        boofer.append(usersInput());
+        boofer.reverse();
+
+        String verifyingString  = boofer.toString();
         String[] stringArray = verifyingString.split("");
 
         for (int i = 0; i < stringArray.length; i++) {
-            System.out.println(stringArray[i]);
+            verifiable.append(stringArray[i]);
+
+            if ((i == 2) | (i == 5) | (i == 8) | (i == 11) | (i == 14) | (i == 17) | (i == 20)) {
+                verifiable.append(" ");
+            }
         }
+        verifiable.reverse();
 
-
-        return 0;
+        return verifiable;
     }
 }
