@@ -38,7 +38,7 @@ public class JumpingArray {
 
         for (int i = 0; i < size; i++) {
         array[i] = (int)(Math.random() * 10);
-            System.out.print(array[i] + " ");
+            System.out.print(array[i]);
         }
         System.out.println();
         return array;
@@ -60,9 +60,8 @@ public class JumpingArray {
     int arrayOutput() {
 
         StringBuffer reversedArray = arrayReverse();
-        
-
-        System.out.println("reversedArray is " + reversedArray);
+        System.out.println("reversedArray is:");
+        System.out.println(reversedArray);
         return 0;
     }
 }
