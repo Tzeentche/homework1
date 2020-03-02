@@ -43,7 +43,7 @@ public class AccountingFormat {
         for (int i = 0; i < stringArray.length; i++) {
             verifiable.append(stringArray[i]);
 
-            if ((i == 2) | (i == 5) | (i == 8) | (i == 11) | (i == 14) | (i == 17) | (i == 20)) {
+            if ((i + 1) % 3 == 0) {
                 verifiable.append(" ");
             }
         }
