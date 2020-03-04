@@ -36,7 +36,7 @@ public class PunctuationMarks {
 
     String[] textTerminator(String someText) {
 
-        String[] textArray = someText.split("[.,;+!?]");
+        String[] textArray = someText.split("[.,:;+!?]");
         return textArray;
     }
 
