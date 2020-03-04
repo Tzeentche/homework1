@@ -73,6 +73,11 @@ public class DayMonthYear {
 
         } else if((check[1] == 12) && check[0] == 31) {
                 check[2] += 1;
+
+                if (check[2] == 100) {
+
+                    check[2] = 00;
+                }
                 check[1] = 1;
                 check[0] = 1;
 
