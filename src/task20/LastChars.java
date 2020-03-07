@@ -34,7 +34,7 @@ public class LastChars {
 
     String[] lastCharsSplitter(String incomingSentence) {
 
-        String[] usersSentence = incomingSentence.split("[a-zA-Z*]");
+        String[] usersSentence = incomingSentence.split("[\\S][\\\\>a-z]");
         return usersSentence;
     }
 
