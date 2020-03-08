@@ -7,7 +7,7 @@ package task22;
 
 public class TimeInterval {
 
-    public static void main(String[] args) {
-        
-    }
+    int sec;
+    int min;
+    int hours;
 }
