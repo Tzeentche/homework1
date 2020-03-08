@@ -10,4 +10,15 @@ public class TimeInterval {
     int sec;
     int min;
     int hours;
+
+    int returnSeconds(int hours, int min, int sev) {
+        int resultIs = (hours * 360) + (min * 60) + sec;
+
+        return resultIs;
+    }
+
+    boolean objectsCompare() {
+
+        return true;
+    }
 }
