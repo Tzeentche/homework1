@@ -11,14 +11,31 @@ public class TimeInterval {
     int min;
     int hours;
 
-    int returnSeconds(int hours, int min, int sev) {
+    int returnSeconds() {
         int resultIs = (hours * 360) + (min * 60) + sec;
-
         return resultIs;
     }
 
-    boolean objectsCompare() {
+    int objectsCompare() {
+        if(this.sec >= this.returnSeconds()) {
+            System.out.println("Object 1 > Object 2");
+        } else {
+            System.out.println("Object 1 < Object 2");
+        }
+        return this.sec - this.returnSeconds();
+    }
 
-        return true;
+    public TimeInterval(int secValue) {
+        sec = secValue;
+    }
+
+    public TimeInterval(int hours, int min, int sec) {
+        this.sec = sec;
+        this.min = min;
+        this.hours = hours;
+    }
+
+    void outputter() {
+        System.out.println("Time interval counting result in seconds is " + sec + "!");
     }
 }
