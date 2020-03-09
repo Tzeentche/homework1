@@ -9,5 +9,9 @@ public class ClassWithMain {
 
     public static void main(String[] args) {
 
+        TimeInterval obj1 = new TimeInterval(45683477);
+        TimeInterval obj2 = new TimeInterval(33,26,12);
+        obj1.outputter();
+        obj2.objectsCompare();
     }
 }
