@@ -29,19 +29,15 @@ public class TimeInterval {
     public TimeInterval() {
     }
 
-    public TimeInterval(int secValue) {
-        sec = secValue;
-        System.out.println("Time interval secValue is " + sec);
-    }
-
     public TimeInterval(int hours, int min, int sec) {
         this.sec = sec;
         this.min = min;
         this.hours = hours;
+        outputter(hours, min, sec);
     }
 
-    void outputter(int ) {
-
+    void outputter(int allSeconds) {
+        System.out.println("Time interval in seconds is " + allSeconds + "!");
     }
 
     void outputter(int hours, int min, int sec) {

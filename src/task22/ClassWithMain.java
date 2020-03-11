@@ -18,22 +18,16 @@ public class ClassWithMain {
 
         try {
             for (int i = 0; i < 3; i++) {
-                System.out.println("Please, enter integer " + names[i] + " :");
+                System.out.println("Please, enter integer " + names[i] + " in format HH:MM:SS :");
                 time[i] = scn.nextInt();
             }
 
         } catch(InputMismatchException ex) {
             System.out.println("You entered wrong value (not Integer). Please, next time be more carefully!");
         }
-        TimeInterval obj1 = new TimeInterval(45683477);
-        TimeInterval obj2 = new TimeInterval(time[0],time[1],time[2]);
-
+        TimeInterval obj1 = new TimeInterval(time[0],time[1],time[2]);
 
         obj1.objectsCompare();
         obj1.returnSeconds();
-        obj1.outputter();
-        obj2.objectsCompare();
-        obj2.returnSeconds();
-        obj2.outputter();
     }
 }
