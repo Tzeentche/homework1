@@ -13,6 +13,7 @@ public class TimeInterval {
 
     int returnSeconds() {
         int resultIs = (hours * 360) + (min * 60) + sec;
+        System.out.println("Return seconds " + resultIs);
         return resultIs;
     }
 
@@ -25,8 +26,12 @@ public class TimeInterval {
         return this.sec - this.returnSeconds();
     }
 
+    public TimeInterval() {
+    }
+
     public TimeInterval(int secValue) {
         sec = secValue;
+        System.out.println("Time interval secValue is " + sec);
     }
 
     public TimeInterval(int hours, int min, int sec) {
@@ -35,7 +40,11 @@ public class TimeInterval {
         this.hours = hours;
     }
 
-    void outputter() {
-        System.out.println("Time interval counting result in seconds is " + sec + "!");
+    void outputter(int ) {
+
+    }
+
+    void outputter(int hours, int min, int sec) {
+        System.out.println("Time interval counting result in hours, minutes and seconds is " + hours + ":" + min + ":" + sec + "!");
     }
 }
