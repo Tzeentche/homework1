@@ -8,11 +8,14 @@ public class MainATM {
 
     public static void main(String[] args) {
 
-        ATM atm = new ATM();
+        ATMInterpretator atm = new ATMInterpretator();
+        ATMLogic logic = new ATMLogic();
 
-        atm.insertMoney();
-        atm.takeMoney();
-
-
+        atm.helloMessage();
+        System.out.println("Some text 1");
+        String trigger = atm.depositOrWithdraw();
+        System.out.println("Some text 2");
+        logic.startWorking(trigger);
+        System.out.println("Some text 3");
     }
 }
