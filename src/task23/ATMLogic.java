@@ -2,31 +2,16 @@ package task23;
 
 public class ATMLogic {
 
-    private ATM aTM = new ATM();
     private DepositOperations depositOperations = new DepositOperations();
+    int currentBalance = depositOperations.getUsersDeposite();
 
-    public void startWorking() {
-        while(true) {
-            String dOrW = aTM.depositOrWithdraw();
+    public void startWorking(String usersChoice) {
+        System.out.println("Some text 4");
+        if (usersChoice == "D" || usersChoice == "d") {
+            currentBalance = depositOperations.depositeMoney();
 
-//            String map = parking.printParkingMap();
-//            parkomat.helloMessage(map);
-//            Car car = parking.driveOut(newPlateNumber);
-            if(dOrW == "D") {
-
-                continue;
-            } else if (dOrW == "W") {
-
-                continue;
-            }
-
-//            int result = parking.driveIn(new Car(newPlateNumber));
-//
-//            if(result != -1) {
-//                parkomat.showParkedPlace(result);
-//            } else {
-//                parkomat.showParkingFull();
-//            }
+        } else if (usersChoice == "W" || usersChoice == "w") {
+            currentBalance = depositOperations.withdrawMoney();
         }
     }
 }
