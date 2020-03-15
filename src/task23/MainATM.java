@@ -4,7 +4,7 @@ package task23;
 //      количеством купюр номиналом 20, 50, 100. Сделать методы для добавления денег в банкомат. Сделать функцию, снимающую деньги.
 //      На вход передается сумма денег.
 
-public class AutomatedTellerMachine {
+public class MainATM {
 
     public static void main(String[] args) {
 
