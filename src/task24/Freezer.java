@@ -1,4 +1,4 @@
-package test24;
+package task24;
 
 public class Freezer extends Refregerator {
 
