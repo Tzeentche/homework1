@@ -6,28 +6,36 @@ import java.util.*;
 
 public class LastNumber {
 
+    private static Scanner scn;
+
     public static void main(String[] args) {
 
-        int number = 0, boofer = 0;
+        int number = 0;
 
-        Scanner input = new Scanner(System.in);
+        System.out.println("Please, enter your INTEGER number: ");
 
         try {
 
-            System.out.println("Please, enter your number: ");
+            while(true) {
+                if(scn == null) {
+                    scn = new Scanner(System.in);
 
-                number = input.nextInt();
+                } else if(scn.hasNextInt()) {
 
-            boofer = (number % 10);
+                    System.out.println(" d ");
+                }
+                number = scn.nextInt();
+                break;
+            }
 
-            if (boofer == 7) {
+            if (number % 10 == 7 | number % 10 == -7) {
 
                 System.out.println("Your number's last numeral is 7!");
             } else {
 
                 System.out.println("Your number's last numeral is not 7...");
 
-                input.close();
+                scn.close();
             }
 
         } catch (InputMismatchException e) {
