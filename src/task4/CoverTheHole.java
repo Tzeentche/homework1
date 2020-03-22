@@ -2,6 +2,8 @@ package task4;
 
 //      Имеется прямоугольное отверстие размерами a и b, определить, может ли его полностью закрыть круглой картонкой радиусом r.
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.*;
 
 public class CoverTheHole {
@@ -18,6 +20,11 @@ public class CoverTheHole {
             for (int i = 0; i < arr.length; i ++) {
                 System.out.println("Please, enter size for " + arr[i] + ":");
                 values[i] = input.nextDouble();
+
+                if(values[i] < 0) {
+                    System.out.println("Size cannot be negative. Most likely you mistakenly entered \"-\". We fixed it.");
+                    values[i] *= -1;
+                }
             }
 
             if(
