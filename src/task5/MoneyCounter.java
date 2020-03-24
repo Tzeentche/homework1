@@ -14,13 +14,11 @@ public class MoneyCounter {
         Scanner summ = new Scanner(System.in);
 
         try {
-
             System.out.println("Please, enter your's money value:");
             money = summ.nextInt();
             summ.close();
 
         } catch (InputMismatchException ex) {
-
             System.out.println("You input is not number. Please, try again!");
         }
 
