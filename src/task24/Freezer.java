@@ -2,18 +2,13 @@ package task24;
 
 public class Freezer extends Refregerator {
 
-    double length;
-    double width;
-    double weight;
-    String color;
-    int highLowVoltage;
+    public Freezer() {
 
-    private Freezer() {
-
-        length = 50.00;
-        width = 50.00;
-        weight = 10.00;
-        color = "white";
-        highLowVoltage = 220;
+        setLength(50.00);
+        setWidth(50.00);
+        setWeight(10.00);
+        setColor("White");
+        setHighLowVoltage(220);
+        on();
     }
 }
