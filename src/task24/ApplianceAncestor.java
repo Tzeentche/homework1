@@ -1,12 +1,13 @@
 package task24;
 
-public class ApplianceAncestor {
+public class ApplianceAncestor implements AcDc{
 
     double length;
     double width;
     double weight;
     String color;
     int highLowVoltage;
+    protected boolean state = false;
 
     public double getLength() {
         return length;
@@ -46,5 +47,24 @@ public class ApplianceAncestor {
 
     public void setHighLowVoltage(int highLowVoltage) {
         this.highLowVoltage = highLowVoltage;
+    }
+
+    @Override
+    public void on() {
+        state = true;
+    }
+
+    @Override
+    public void off() {
+        state = false;
+    }
+
+    @Override
+    public void printState() {
+        if(state) {
+            System.out.println("I'm is On!");
+        } else {
+            System.out.println("I'm is Off!");
+        }
     }
 }
