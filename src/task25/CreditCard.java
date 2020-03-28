@@ -9,5 +9,6 @@ public class CreditCard extends CardAncestor {
         setPremiumLevel("Platinum");
         setCurrency("BYN");
         setNamed(true);
+        mastercard();
     }
 }
