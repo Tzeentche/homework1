@@ -9,6 +9,7 @@ public class CardAncestor implements PaymentSystem {
     String premiumLevel;
     String currency;
     boolean isNamed;
+    String system;
 
     public String getCurrency() {
         return currency;
@@ -49,8 +50,6 @@ public class CardAncestor implements PaymentSystem {
     public void setNamed(boolean named) {
         isNamed = named;
     }
-
-    String system;
 
     @Override
     public void visa() {
