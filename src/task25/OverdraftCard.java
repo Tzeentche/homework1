@@ -9,5 +9,6 @@ public class OverdraftCard extends DebitCard {
         setPremiumLevel("Simple");
         setCurrency("BYN");
         setNamed(false);
+        visa();
     }
 }
