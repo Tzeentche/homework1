@@ -9,5 +9,6 @@ public class DebitCard extends CardAncestor {
         setPremiumLevel("Gold");
         setCurrency("USD");
         setNamed(true);
+        visa();
     }
 }
