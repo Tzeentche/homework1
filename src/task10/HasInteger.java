@@ -1,6 +1,6 @@
 package task10;
 
-//      Имеется целове число. Следует посчитать сумму цифр данного числа.
+//      Имеется целое число. Следует посчитать сумму цифр данного числа.
 
 import java.util.*;
 
@@ -13,33 +13,23 @@ public class HasInteger {
 
         try {
 
-            System.out.println("Please, enter integer number:");
+            System.out.println("Please, enter Integer number, more than 1:");
             numberIs = scn.nextInt();
             scn.close();
-
-            if(numberIs < 100) {
-
-                counter = (numberIs % 10) + (numberIs / 10);
-
-            } else if (numberIs < 1000) {
-
-                counter += (numberIs % 10) + ((numberIs % 100) / 10) + (numberIs / 100);
-
-            } else if (numberIs < 10000) {
-
-                counter += (numberIs % 10) + ((numberIs % 100) / 10) + ((numberIs % 1000) / 100) + (numberIs / 1000);
-
-            } else if (numberIs > 10000) {
-
-                System.out.println("That's enough!");
+            if(numberIs < 2) {
+                System.out.println("That is too low...");
                 System.exit(0);
             }
 
-        } catch(InputMismatchException ex) {
+            while(numberIs != 0){
+                counter += (numberIs % 10);
+                numberIs /= 10;
+            }
 
+        } catch(InputMismatchException ex) {
             System.out.println("Please, try again and enter only integers!");
         }
 
-        System.out.println("Result is " + counter);
+        System.out.println("Result is: " + counter);
     }
 }
