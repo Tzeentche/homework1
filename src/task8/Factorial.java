@@ -9,38 +9,38 @@ public class Factorial {
     public static void main(String[] args) {
 
         Factorial result = new Factorial();
-        System.out.println(result.counter());
+        int usersValueIs = result.usersInput();
+        System.out.println(result.counter(usersValueIs));
     }
 
-    long usersInput() {
+    int usersInput() {
 
-        long fact = 0;
+        int fact = 0;
         Scanner scn = new Scanner(System.in);
 
         try {
 
-            System.out.println("Please, enter your value:");
+            System.out.println("Please, enter your value, less than \"25\", because overloading:");
             fact = scn.nextInt();
             scn.close();
+            if(fact > 25) {
+                System.out.println("It's too much! Please, next time enter less value.");
+                System.exit(0);
+            }
 
         } catch(InputMismatchException ex) {
 
             System.out.println("You entered wrong value. Next time be more carefully and always be happy!");
         }
-
         return fact;
     }
 
-    int counter() {
-
-        int factorial = 1;
-        long value = usersInput();
+    long counter(int value) {
+        long factorial = 1;
 
         for (int i = 1; i <= value; i++) {
-
-            factorial *= i;
+            factorial = (long)(factorial * i);
         }
-
         return factorial;
     }
 }
