@@ -2,6 +2,9 @@ package task14;
 
 //      В задаче на поиск максимальной оценки, вывести не саму оценку, а ее номер.
 
+import com.sun.security.jgss.GSSUtil;
+
+import javax.swing.plaf.IconUIResource;
 import java.util.*;
 
 public class MaxMark {
@@ -35,21 +38,30 @@ public class MaxMark {
         int size = userInput();
         int[] marks = new int[size];
 
+        System.out.println("Array with random values looks like next type:");
         for(int counter = 0; counter < size; counter++){
             marks[counter] = (int)(Math.random() * 10);
+            System.out.print(marks[counter] + " ");
         }
+        System.out.println();
         return marks;
     }
 
-    int giveMeIndex() {
+    String giveMeIndex() {
 
         int[] marksArray = randomFiling();
-        int boofer = 0, index = 0;
+        String index = new String();
+        int boofer = 0;
 
         for (int counter = 0; counter < marksArray.length; counter++) {
-            if(marksArray[counter] > boofer) {
+            if(marksArray[counter] >= boofer) {
                 boofer = marksArray[counter];
-                index = counter + 1;
+            }
+        }
+
+        for(int counter2 = 0; counter2 < marksArray.length; counter2++) {
+            if(marksArray[counter2] >= boofer) {
+                index += (counter2 + 1) + "; ";
             }
         }
         return index;
