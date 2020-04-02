@@ -40,6 +40,9 @@ public class PrimNumb {
 
             if ((container % i) == 0) {
                 boofer++;
+                if(boofer >= 3) {
+                    break;
+                }
             }
         }
 
