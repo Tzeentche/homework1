@@ -6,9 +6,7 @@ public class CardAncestor implements PaymentSystem {
 
     String color;
     String bank;
-    String premiumLevel;
     String currency;
-    boolean isNamed;
     String system;
 
     public String getCurrency() {
@@ -33,22 +31,6 @@ public class CardAncestor implements PaymentSystem {
 
     public void setBank(String bank) {
         this.bank = bank;
-    }
-
-    public String getPremiumLevel() {
-        return premiumLevel;
-    }
-
-    public void setPremiumLevel(String premiumLevel) {
-        this.premiumLevel = premiumLevel;
-    }
-
-    public boolean isNamed() {
-        return isNamed;
-    }
-
-    public void setNamed(boolean named) {
-        isNamed = named;
     }
 
     @Override
