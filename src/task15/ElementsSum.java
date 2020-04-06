@@ -7,43 +7,53 @@ import java.util.*;
 public class ElementsSum {
 
     public static void main(String[] args) {
-
         ElementsSum elementsSum = new ElementsSum();
         elementsSum.giveMeSumm();
     }
 
     void giveMeSumm() {
-
         System.out.println("Summ of array's elements is " + summContainer());
     }
 
     int summContainer() {
-
-        int container = 0, max = 0, min = 0;
+        int container = 0, max = 0, min = 0, boofer = 0;
         int[] elementsArray = usersInput();
 
-        try{
-            Scanner scn = new Scanner(System.in);
-            System.out.println("Now please, enter integer MIN summ index:");
-            min = scn.nextInt();
-
-            System.out.println("Now please, enter integer MAX summ index:");
-            max = scn.nextInt();
-            scn.close();
-
-        } catch (InputMismatchException ex) {
-
-            System.out.println("Please< next time enter correct value!");
+        for (int i = 0; i < elementsArray.length; i++) {
+            if (min >= elementsArray[i]) {
+                min = elementsArray[i];
+                boofer = i;
+            }
         }
+        min = boofer;
+        boofer = 0;
 
-        for (int i = min - 1; i < max; i++) {
-            container += elementsArray[i];
-        }
+        System.out.println("min " + min);
+
+            for (int j = 0; j < elementsArray.length; j++) {
+                if(max <= elementsArray[j]) {
+                    max = elementsArray[j];
+                    boofer = j;
+                }
+            }
+            max = boofer;
+
+        System.out.println("max " + max);
+
+            if(min > max) {
+                boofer = max;
+                max = min;
+                min = boofer;
+            }
+
+            for (int counter = min + 1; counter < max; counter++) {
+                container += elementsArray[counter];
+            }
+        System.out.println("container " + container);
         return container;
     }
 
     int[] usersInput() {
-
         int size = 0;
 
         try{
@@ -52,8 +62,7 @@ public class ElementsSum {
             size = scn.nextInt();
 
         } catch (InputMismatchException ex) {
-
-            System.out.println("Please< next time enter correct value!");
+            System.out.println("Please, next time enter correct value!");
         }
 
         int[] array = arrayFilling(size);
@@ -66,7 +75,6 @@ public class ElementsSum {
 
         System.out.println("Now your array looks like this: ");
         for(int i = 0; i < size; i++) {
-
             fullArray[i] = (int)(Math.random() * 10);
             System.out.print(fullArray[i] + " ");
         }
