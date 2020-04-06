@@ -16,14 +16,11 @@ public class MainBankCards {
 
         System.out.println("Hello! I'm a card-ancestor. I'm first. My color is " + cardAncestor.getColor());
         System.out.println("I'm first. My bank is " + cardAncestor.getBank());
-        System.out.println("I'm first. My premium level is " + cardAncestor.getPremiumLevel());
         System.out.println("I'm first. My currency is " + cardAncestor.getCurrency());
-        cardAncestor.isNamed();
         System.out.println();
 
         System.out.println("Hello! I'm a card-child. I'm first. My color is " + debitCard.getColor());
         System.out.println("I'm first. My bank is " + debitCard.getBank());
-        System.out.println("I'm first. My premium level is " + debitCard.getPremiumLevel());
         System.out.println("I'm first. My currency is " + debitCard.getCurrency());
         debitCard.isNamed();
         System.out.println();
@@ -32,27 +29,28 @@ public class MainBankCards {
         System.out.println("I'm first. My bank is " + creditCard.getBank());
         System.out.println("I'm first. My premium level is " + creditCard.getPremiumLevel());
         System.out.println("I'm first. My currency is " + creditCard.getCurrency());
-        creditCard.isNamed();
         System.out.println();
 
         System.out.println("Hello! I'm a card-child. I'm first. My color is " + overdraftCard.getColor());
         System.out.println("I'm first. My bank is " + overdraftCard.getBank());
-        System.out.println("I'm first. My premium level is " + overdraftCard.getPremiumLevel());
         System.out.println("I'm first. My currency is " + overdraftCard.getCurrency());
-        overdraftCard.isNamed();
+        if(overdraftCard.getIsNFC()) { System.out.println("I have a NFC-system"); }
+        if(overdraftCard.isNamed()) { System.out.println("I have personal name"); }
         System.out.println();
 
         System.out.println("Hello! I'm a card-child. I'm first. My color is " + virtualCard.getColor());
         System.out.println("I'm first. My bank is " + virtualCard.getBank());
-        System.out.println("I'm first. My premium level is " + virtualCard.getPremiumLevel());
         System.out.println("I'm first. My currency is " + virtualCard.getCurrency());
-        virtualCard.isNamed();
+        if(virtualCard.getIsApplePay()) { System.out.println("I have Apple-pay system"); }
+        if(virtualCard.isNamed()) { System.out.println("I have personal name"); }
         System.out.println();
 
         System.out.println("Hello! I'm a card-child. I'm first. My color is " + testCardStrip.getColor());
         System.out.println("I'm first. My bank is " + testCardStrip.getBank());
-        System.out.println("I'm first. My premium level is " + testCardStrip.getPremiumLevel());
         System.out.println("I'm first. My currency is " + testCardStrip.getCurrency());
+        if(testCardStrip.getIsApplePay()) { System.out.println("I have Apple-pay system"); }
+        if(testCardStrip.isNamed()) { System.out.println("I have personal name"); }
+        if(testCardStrip.getIsOpenSource()) { System.out.println("I have open source development"); }
         testCardStrip.isNamed();
     }
 }
