@@ -14,7 +14,7 @@ public class MainRandomValues {
 
         int size = usersDiallog.collectionSize();
         ArrayList collection = collectionStorage.valuesStorage(size);
-        System.out.println("Now our collection has next view: ");
+        System.out.println("Now our collection, without duplicates, has next view: ");
         System.out.println(collectionHandler.doublesKiller(collection));
     }
 }
