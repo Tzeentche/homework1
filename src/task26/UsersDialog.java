@@ -18,12 +18,13 @@ public class UsersDialog {
             }
         } catch (InputMismatchException ex) {
             System.out.println("You entered wrong value. Please, next time enter Integer value more, than 0.");
+            System.exit(-1);
         }
         return studentsValue;
     }
 
     int minMarksLevel() {
-        System.out.println("Please, enter Integer value (more than 0 and less than 10) of minimum mark, that students in your group wll have: ");
+        System.out.println("Please, enter Integer value (more than 0 and less than 10) of minimum mark, that students in your group should have: ");
         try {
             minMark = scn.nextInt();
             if(minMark <= 0 | minMark > 10) {
@@ -33,6 +34,7 @@ public class UsersDialog {
             scn.close();
         } catch (InputMismatchException ex) {
             System.out.println("You entered wrong value. Please, next time enter Integer value more, than 0 and less than 10.");
+            System.exit(-1);
         }
         return minMark;
     }

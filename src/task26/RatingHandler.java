@@ -10,7 +10,7 @@ public class RatingHandler {
 
             for (int j = 0; j < marksStorage.size(); j++) {
 
-                if ((int) marksStorage.get(j) <= minMark) {
+                if ((int) marksStorage.get(j) < minMark) {
                     marksStorage.remove(j);
                 }
             }
