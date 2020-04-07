@@ -15,7 +15,7 @@ public class MarksFinder {
 
         int size = usersInput.listCreator();
         ArrayList list = listContainer.listFiller(size);
-        System.out.println("Max mark is: ");
+        System.out.println("Max mark(s) is: ");
         System.out.println(listHandler.maxMarkFinder(list));
     }
 }
