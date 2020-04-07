@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         NewFile newFile = new NewFile();
-        ReadFile readFile = new ReadFile();
+        ReadedFile readFile = new ReadedFile();
         Calculator calculator = new Calculator();
 
         File textFile = new File("Text.txt");
