@@ -2,8 +2,7 @@ package task20;
 
 //      Имеется строка с текстом. Вывести текст, составленный из последних букв всех слов.
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.*;
 
 public class LastChars {
 
@@ -11,8 +10,7 @@ public class LastChars {
 
         LastChars lastChars = new LastChars();
         String usersInput = lastChars.usersSentence();
-        String[] lastCharsCollection = lastChars.lastCharsSplitter(usersInput);
-        String resultWordIs = lastChars.concatenator(lastCharsCollection);
+        StringBuilder resultWordIs = lastChars.concatenator(usersInput);
         lastChars.outputResult(resultWordIs);
     }
 
@@ -32,21 +30,18 @@ public class LastChars {
         return sentence;
     }
 
-    String[] lastCharsSplitter(String incomingSentence) {
+    StringBuilder concatenator(String incomingCharsArray) {
+        StringBuilder concatResult = new StringBuilder();
 
-        String[] usersSentence = incomingSentence.split("[\\S][>a-z]");
-        return usersSentence;
-    }
+        for(int i = 0; i < incomingCharsArray.length(); i++) {
 
-    String concatenator(String[] incomingCharsArray) {
-        String concatResult = "";
-        for(int i = 0; i < incomingCharsArray.length; i++) {
-            concatResult += incomingCharsArray[i];
+            if(incomingCharsArray.charAt(i) != ' ' && (incomingCharsArray.charAt(i + 1) != incomingCharsArray.length() - 1 && incomingCharsArray.charAt(i + 1) == ' '))
+                concatResult.insert(concatResult.length(), incomingCharsArray.charAt(i));
         }
         return concatResult;
     }
 
-    void outputResult(String resultIs) {
-        System.out.println("Text> consists with all last chars of Users's sentence is \"" + resultIs + "\".");
+    void outputResult(StringBuilder resultIs) {
+        System.out.println("Text, consists with all last chars of Users's sentence is \"" + resultIs + "\".");
     }
 }
